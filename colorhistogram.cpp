@@ -107,20 +107,6 @@ void colorHistogram::updateRasterImage() {
                 setColors = setDominantColor(row, col, sliderValue);
             }
 
-            // Check the frequency in the QVector
-            // if (colorIndex >= 0 && (*slices)[colorIndex] > 0) {
-            //     if((*slices)[colorIndex] < 5) {
-            //         painter.setPen(QColor(setColors[0], setColors[1], setColors[2], 64));
-            //     } else if((*slices)[colorIndex] < 10) {
-            //         painter.setPen(QColor(setColors[0], setColors[1], setColors[2],148));
-            //     } else if((*slices)[colorIndex] < 15) {
-            //         painter.setPen(QColor(setColors[0], setColors[1], setColors[2],212));
-            //     } else {
-            //         painter.setPen(QColor(setColors[0], setColors[1], setColors[2],255));
-            //     }
-
-            //     painter.drawPoint(row, col);
-            // }
             if (colorIndex > -1) {
                 int alpha = (opacitySliderInput * ((*slices)[colorIndex])) < 255 ? (opacitySliderInput * ((*slices)[colorIndex])) : 255;
                 painter.setPen(QColor(setColors[0], setColors[1], setColors[2], alpha));
