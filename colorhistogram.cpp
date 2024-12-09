@@ -81,7 +81,7 @@ void colorHistogram::opacitySlot(int num) {
 QVector<int> colorHistogram::setDominantColor(int num1, int num2, int num3) {
 
     int trueMax = std::max({num1, num2, num3});
-    return QVector<int>({((255/trueMax)*num1),((255/trueMax)*num2),((255/trueMax)*num3)});
+    return QVector<int>({((255/trueMax)*num1 + 1),((255/trueMax)*num2 + 1),((255/trueMax)*num3 + 1)});
 }
 
 
